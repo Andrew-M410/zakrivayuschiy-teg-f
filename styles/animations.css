@@ -38,7 +38,7 @@
 
   .like-icon,
   .button::before {
-    animation: none;
     transition: none;
+    animation: none;
   }
 }
