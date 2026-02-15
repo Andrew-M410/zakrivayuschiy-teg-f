@@ -156,23 +156,17 @@
   font-size: var(--font-size-accent);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
+  text-shadow:
+    1px 1px 0 var(--bg-color),
+    -1px 1px 0 var(--bg-color),
+    1px -1px 0 var(--bg-color),
+    -1px -1px 0 var(--bg-color);
 }
 
 @supports (-webkit-text-stroke: 1px var(--bg-color)) {
-
   .card__image-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--bg-color);
-  }
-}
-
-@supports not (-webkit-text-stroke: 1px var(--bg-color)) {
-  .card__image-label {
-    text-shadow:
-      1px 1px 0 var(--bg-color),
-      -1px 1px 0 var(--bg-color),
-      1px -1px 0 var(--bg-color),
-      -1px -1px 0 var(--bg-color);
   }
 }
 
@@ -181,6 +175,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 0 25px ;
+  line-height: 117%;
 }
 
 /*============== animation ==============*/
@@ -274,7 +269,7 @@
 
 .is-liked.like-icon .sparks {
   transform-origin: center;
-  animation: heart-sparks 0.3s ease-in forwards 0.3s;
+  animation: heart-sparks 0.3s ease-in 0.3s;
 }
 
 .button {
@@ -292,10 +287,12 @@
   cursor: pointer;
 }
 
-.button:focus,
+.button:focus {
+  outline: none;
+}
+
 .button:focus-visible {
   box-shadow: 2px 2px 0 var(--main-color);
-  outline: none;
 }
 
 .button::before {
