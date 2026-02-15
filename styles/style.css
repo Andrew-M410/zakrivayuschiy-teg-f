@@ -359,7 +359,7 @@
     height: 28px;
   }
 
-  .popup[open]{
+  .popup[open] {
     padding: 30px 40px;
   }
 }
